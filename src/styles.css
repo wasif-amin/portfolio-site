@@ -1,0 +1,51 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.Project {
+  border-radius: 25px;
+  position: relative;
+  padding: 25px 15px;
+  background-color: #6fcf97;
+  margin: 50px 0;
+  min-height: 300px;
+  width: 300px;
+  box-shadow: 0 2px 5px #ccc;
+  text-align: left;
+  border: solid 5px #00cec9;
+  padding-bottom: 20px;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+button {
+  height: 35px;
+  width: 80px;
+  border-radius: 14px;
+  border: #6fcf97#6FCF97 solid 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+  width: 90px;
+  border-radius: 14px;
+  border: #00cec9 solid 2px;
+  display: flex;
+  border: #00cec9 solid 5px;
+  border-radius: 25px;
+  align-items: center;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  box-shadow: 0 0px #0056b3;
+  transform: translateY(6px);
+}
+.Project img {
+  border-radius: 25px;
+}
