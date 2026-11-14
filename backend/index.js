@@ -12,13 +12,19 @@ const pool = new Pool({
 });
 
 const app = express();
-const PORT = process.env.PORT || 50001;
+const PORT = process.env.PORT || 5001;
 
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Express server is running!");
+app.get("/api/projects", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM projects");
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: "Server error fetching projects" });
+  }
 });
 
 app.listen(PORT, () => {
