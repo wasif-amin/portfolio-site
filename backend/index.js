@@ -1,9 +1,9 @@
 const express = require("express");
 const cors = require("cors");
-const { Pool, Pool } = require("pg");
+const { Pool } = require("pg");
 require("dotenv").config();
 
-const Pool = new Pool({
+const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
   database: process.env.DB_NAME,
