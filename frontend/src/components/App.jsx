@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-import Project from "../Project";
+import Project from "./Project";
 export default function App() {
   const [projects, setProjects] = useState(null);
 
@@ -10,6 +10,7 @@ export default function App() {
       .then((data) => setProjects(data))
       .catch((err) => console.error("Error fetching projects:", err));
   }, []);
+  console.log(projects);
   return (
     <div className="App">
       <Project />
