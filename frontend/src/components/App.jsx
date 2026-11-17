@@ -13,7 +13,16 @@ export default function App() {
   console.log(projects);
   return (
     <div className="App">
-      <Project />
+      {projects.map((Project, index) => (
+                <Product
+                  key={index}
+                  name={Project.name}
+                  price={Project.price}
+                  img={Project.image_url}
+                  isAdmin={isAdmin}
+            
+                />
+              ))}
     </div>
   );
 }
