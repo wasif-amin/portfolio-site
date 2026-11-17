@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles.css";
 import Project from "./Project";
 export default function App() {
-  const [projects, setProjects] = useState(null);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:5001/api/projects`)
@@ -13,16 +13,15 @@ export default function App() {
   console.log(projects);
   return (
     <div className="App">
-      {projects.map((Project, index) => (
-                <Product
-                  key={index}
-                  name={Project.name}
-                  price={Project.price}
-                  img={Project.image_url}
-                  isAdmin={isAdmin}
-            
-                />
-              ))}
+      {projects.map((project, index) => (
+        <Project
+          key={index}
+          name={Project.name}
+         
+          img={Project.image_url}
+        
+        />
+      ))}
     </div>
   );
 }
