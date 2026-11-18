@@ -9,9 +9,10 @@ function Project() {
         alt=""
         height="200px"
       />
+      <p>description</p>
       <div className="button-container">
         <button>gitgub</button>
-        <button>video</button>
+        <button>video demo</button>
       </div>
     </div>
   );
