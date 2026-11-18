@@ -16,7 +16,7 @@ export default function App() {
       {projects.map((project, index) => (
         <Project
           key={index}
-          name={project.name}
+          name={project.title}
           img={project.image_url}
           description={project.description}
           gitHub={project.github_link}

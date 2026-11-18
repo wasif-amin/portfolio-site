@@ -1,4 +1,4 @@
- .App {
+.App {
   font-family: sans-serif;
   text-align: center;
 }
@@ -50,7 +50,6 @@ button:active {
   border-radius: 25px;
 }
 
-
 .App {
   font-family: sans-serif;
   flex-wrap: wrap;
@@ -65,5 +64,10 @@ button:active {
   flex-direction: column;
   width: 300px;
 }
-
-
+p {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.button-container a {
+  text-decoration: none;
+}

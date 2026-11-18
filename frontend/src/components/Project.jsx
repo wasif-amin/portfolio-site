@@ -3,7 +3,7 @@ import "../styles.css";
 function Project(props) {
   return (
     <div className="Project">
-      <h1>{props.name}</h1>
+      <h2>{props.name}</h2>
       <img src={props.img} alt="" height="200px" width="200" />
       <p>{props.description}</p>
       <div className="button-container">
@@ -11,7 +11,6 @@ function Project(props) {
           <button>GitHub</button>
         </a>
         <a href={props.loom} target="_blank">
-        
           <button>Video demo</button>
         </a>
       </div>
