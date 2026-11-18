@@ -1,4 +1,4 @@
-.App {
+ .App {
   font-family: sans-serif;
   text-align: center;
 }
@@ -49,3 +49,21 @@ button:active {
 .Project img {
   border-radius: 25px;
 }
+
+
+.App {
+  font-family: sans-serif;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  padding: 40px 20px;
+}
+
+.Project {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+

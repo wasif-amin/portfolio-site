@@ -1,18 +1,19 @@
 import React from "react";
 import "../styles.css";
-function Project() {
+function Project(props) {
   return (
     <div className="Project">
-      <h1>title</h1>
-      <img
-        src="https://media.istockphoto.com/id/150537878/vector/big-smile-emoticon.jpg?s=612x612&w=0&k=20&c=5dtxhReFwkblZpM5e8QxfyJTrpPKYOVb4LjfdNmAPGA="
-        alt=""
-        height="200px"
-      />
-      <p>description</p>
+      <h1>{props.name}</h1>
+      <img src={props.img} alt="" height="200px" width="200" />
+      <p>{props.description}</p>
       <div className="button-container">
-        <button>gitgub</button>
-        <button>video demo</button>
+        <a href={props.gitHub} target="_blank">
+          <button>GitHub</button>
+        </a>
+        <a href={props.loom} target="_blank">
+        
+          <button>Video demo</button>
+        </a>
       </div>
     </div>
   );
