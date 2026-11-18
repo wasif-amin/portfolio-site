@@ -17,9 +17,10 @@ export default function App() {
         <Project
           key={index}
           name={Project.name}
-         
           img={Project.image_url}
-        
+          description={project.description}
+          gitHub={project.github_link}
+          loom={project.loom_link}
         />
       ))}
     </div>
