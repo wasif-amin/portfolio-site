@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
 import Project from "./Project";
+import CreateProject from "./CreateProject";
 export default function App() {
   const [projects, setProjects] = useState([]);
 
@@ -23,6 +24,7 @@ export default function App() {
           loom={project.loom_link}
         />
       ))}
+      <CreateProject />
     </div>
   );
 }

@@ -71,3 +71,17 @@ p {
 .button-container a {
   text-decoration: none;
 }
+.newProject {
+  display: flex;
+  border-radius: 25px;
+  position: relative;
+  padding: 25px 15px;
+  background-color: #6fcf97;
+  margin: 50px 0;
+  height: 300px;
+  width: 300px;
+  box-shadow: 0 2px 5px #ccc;
+  text-align: left;
+  border: solid 5px #00cec9;
+  flex-direction: column;
+}
