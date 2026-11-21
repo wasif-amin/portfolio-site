@@ -24,7 +24,7 @@ export default function App() {
           loom={project.loom_link}
         />
       ))}
-      
+      <CreateProject />
     </div>
   );
 }
