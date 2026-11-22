@@ -19,6 +19,7 @@ function CreateProject(props) {
         rows="4"
       ></textarea>
       <input type="text" placeholder="github" />
+      <button type="submit">Add Product</button>
     </form>
   );
 }

@@ -14,6 +14,7 @@ export default function App() {
   console.log(projects);
   return (
     <div className="App">
+      <CreateProject />
       {projects.map((project, index) => (
         <Project
           key={index}
@@ -24,7 +25,6 @@ export default function App() {
           loom={project.loom_link}
         />
       ))}
-      <CreateProject />
     </div>
   );
 }
