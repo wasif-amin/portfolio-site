@@ -28,6 +28,10 @@ app.get("/api/projects", async (req, res) => {
 });
 app.post("/api/add-project", async (req, res) => {
   const { title, image_url, description, github_link, loom_link } = req.body;
+  const newProject = await pool.query(
+    "INSERT INTO projects (title, image_url, description, github_link, loom_link) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+    [title, image_url, description, github_link, loom_link]
+  );
 });
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
