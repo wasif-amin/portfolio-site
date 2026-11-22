@@ -26,7 +26,9 @@ app.get("/api/projects", async (req, res) => {
     res.status(500).json({ error: "Server error fetching projects" });
   }
 });
-
+app.post("/api/add-project", async (req, res) => {
+  const { title, image_url, description, github_link, loom_link } = req.body;
+});
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

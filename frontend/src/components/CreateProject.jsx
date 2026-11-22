@@ -9,8 +9,8 @@ function CreateProject(props) {
   return (
     <form className="newProject">
       <h2>New project</h2>
-      <input type="text" placeholder="name " />
-      <input type="text" placeholder="image url" />
+      <input name="title" type="text" placeholder="name " />
+      <input type="image_url" placeholder="image url" />
       <textarea
         cols="30"
         name="description"
@@ -18,7 +18,8 @@ function CreateProject(props) {
         placeholder="enter description"
         rows="4"
       ></textarea>
-      <input type="text" placeholder="github" />
+      <input name="github_link" type="text" placeholder="github" />
+      <input name="loom_link" type="text"placeholder="loom link" />
       <button type="submit">Add Product</button>
     </form>
   );
