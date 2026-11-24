@@ -14,7 +14,12 @@ const pool = new Pool({
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.get("/api/projects", async (req, res) => {
@@ -27,11 +32,19 @@ app.get("/api/projects", async (req, res) => {
   }
 });
 app.post("/api/add-project", async (req, res) => {
-  const { title, image_url, description, github_link, loom_link } = req.body;
-  const newProject = await pool.query(
-    "INSERT INTO projects (title, image_url, description, github_link, loom_link) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-    [title, image_url, description, github_link, loom_link]
-  );
+  try {
+    const { title, image_url, description, github_link, loom_link } = req.body;
+
+    const newProject = await pool.query(
+      "INSERT INTO projects (title, image_url, description, github_link, loom_link) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      [title, image_url, description, github_link, loom_link]
+    );
+
+    res.status(201).json(newProject.rows[0]);
+  } catch (err) {
+    console.error("Error adding project:", err.message);
+    res.status(500).json({ error: "Server error while adding project" });
+  }
 });
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
