@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
 require("dotenv").config();
-import bcrypt from "bcrypt";
+const bcrypt = require("bcrypt");
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
