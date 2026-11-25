@@ -8,7 +8,7 @@ function Project(props) {
       <p>{props.description}</p>
       <div className="button-container">
         <a href={props.gitHub} target="_blank">
-          <button>GitHub</button>
+          <button>GitHub Repo</button>
         </a>
         <a href={props.loom} target="_blank">
           <button>Video demo</button>
