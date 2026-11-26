@@ -3,7 +3,8 @@ import "../styles.css";
 import Project from "./Project";
 import CreateProject from "./CreateProject";
 import Navbar from "./Navbar";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./Login";
 
 export default function App() {
   const [projects, setProjects] = useState([]);
@@ -19,17 +20,27 @@ export default function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar />
-        <CreateProject />
-        {projects.map((project, index) => (
-          <Project
-            key={index}
-            name={project.title}
-            img={project.image_url}
-            description={project.description}
-            gitHub={project.github_link}
-            loom={project.loom_link}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <CreateProject />
+                {projects.map((project, index) => (
+                  <Project
+                    key={index}
+                    name={project.title}
+                    img={project.image_url}
+                    description={project.description}
+                    github={project.github_link}
+                    loom={project.loom_link}
+                  />
+                ))}
+              </>
+            }
           />
-        ))}
+          <Route path="/Login" element={<Login />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
