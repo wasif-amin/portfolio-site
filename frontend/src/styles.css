@@ -85,3 +85,32 @@ p {
   border: solid 5px #00cec9;
   flex-direction: column;
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0e0e0;
+  padding: 1rem 2rem;
+  height: 35%;
+}
+.navbar-logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar-links a:hover {
+  color: #000;
+}

@@ -7,7 +7,7 @@ function Project(props) {
       <img src={props.img} alt="" height="200px" width="200" />
       <p>{props.description}</p>
       <div className="button-container">
-        <a href={props.gitHub} target="_blank">
+        <a href={props.github} target="_blank">
           <button>GitHub Repo</button>
         </a>
         <a href={props.loom} target="_blank">
