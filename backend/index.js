@@ -4,7 +4,6 @@ const { Pool } = require("pg");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
-
 require("dotenv").config();
 
 const pool = new Pool({
@@ -25,6 +24,19 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(cookieParser());
+
+function verifyAdmin(req, res, next) {
+  const token = req.cookies.adminToken;
+  if (!token) return res.status(401).json({ error: "Unauthorized" });
+
+  try {
+    jwt.verify(token, process.env.JWT_SECRET);
+    next();
+  } catch (err) {
+    res.status(403).json({ error: "Invalid or expired token" });
+  }
+}
 
 app.get("/api/projects", async (req, res) => {
   try {
